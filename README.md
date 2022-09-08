@@ -22,7 +22,7 @@ pip install -r requirements.txt
 ```
 python run_sample --voc12_root $downloaded_dataset_path/VOCdevkit/VOC2012
 ```
-After the script completes, pseudo-split labels are generated in the following directory and their quality is evaluated in mIoU.
+After the script completes, pseudo labels are generated in the following directory and their quality is evaluated in mIoU.
 ```
 .
 ├── misc
@@ -33,8 +33,8 @@ After the script completes, pseudo-split labels are generated in the following d
 │   ├── ir_label
 │   └── sem_seg # what we want in this step!
 ├── sess  # saved models
-│   ├── deits_cam.pth.pth
-│   ├── res152_cam.pth.pth
+│   ├── deits_cam.pth
+│   ├── res152_cam.pth
 │   └── res50_irn.pth
 ├── step
 ├── voc12
@@ -45,4 +45,4 @@ After the script completes, pseudo-split labels are generated in the following d
 ### Train DeepLab with the generated pseudo labels.
 
 ## TODO
-link of paper, PASCAL VOC 2012 devkit, 
+link of paper, picture of crt，performance(quality and quantity), deeplab stage tutorial.
