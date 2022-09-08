@@ -5,9 +5,44 @@ Weakly supervised semantic segmentation (WSSS), which aims to mine the object re
 ## Requirement
 * Python 3.7
 * PyTorch 1.1.0+
-* NVIDIA GeForce RTX 2080Ti x2
+* NVIDIA GeForce RTX 2080Ti x 2
 ## Usage
+### Preparation
 1. Download the repository.
 ```
-hello world
+git clone https://github.com/huodongjian0603/crt.git
 ```
+2. Install dependencies.
+```
+pip install -r requirements.txt
+```
+3. Download [PASCAL VOC 2012 devkit](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar).
+### Generate pseudo-segmentation labels
+1. Run script `run_sample.py`.
+```
+python run_sample --voc12_root $downloaded_dataset_path/VOCdevkit/VOC2012
+```
+After the script completes, pseudo-split labels are generated in the following directory and their quality is evaluated in mIoU.
+```
+.
+├── misc
+├── net
+├── result  # generated cam and pseudo labels
+│   ├── cam
+│   ├── ins_seg
+│   ├── ir_label
+│   └── sem_seg # what we want in this step!
+├── sess  # saved models
+│   ├── deits_cam.pth.pth
+│   ├── res152_cam.pth.pth
+│   └── res50_irn.pth
+├── step
+├── voc12
+├── requirements.txt
+├── run_sample.py
+└── sample_train_eval.log
+```
+### Train DeepLab with the generated pseudo labels.
+
+## TODO
+link of paper, PASCAL VOC 2012 devkit, 
