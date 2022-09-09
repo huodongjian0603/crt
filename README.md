@@ -46,3 +46,25 @@ After the script completes, pseudo labels are generated in the following directo
 
 ## TODO
 link of paper, picture of crt，performance(quality and quantity), deeplab stage tutorial.
+
+## Citation
+
+If you find the code useful, please consider citing our paper using the following BibTeX entry.
+
+```latex
+@misc{2203.04708,
+Author = {xxx},
+Title = {xxx},
+Year = {2022},
+Eprint = {arXiv:2203.04708},
+}
+
+```
+
+
+## Acknowledgement
+
+Our project references the codes in the following repos.
+
+- [IRNet](https://github.com/jiwoon-ahn/irn), [TSCAM](https://github.com/vasgaowei/TS-CAM) and [L2G](https://github.com/PengtaoJiang/L2G)
+
