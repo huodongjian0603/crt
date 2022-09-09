@@ -66,9 +66,9 @@ VOC2012
 └─pseudo_seg_labels
 ```
 ### Train DeepLab with the generated pseudo labels.
-1. Change the working directory to `wsss/`. Download the [pretrained models](https://drive.google.com/file/d/1lwbyAo-XTKsmQX5ZtaZv-5DQONbhJh9n/view?usp=sharing) and put them into the `pretrained` folder.
+1. Change the working directory to `deeplab/`. Download the [pretrained models](https://drive.google.com/file/d/1lwbyAo-XTKsmQX5ZtaZv-5DQONbhJh9n/view?usp=sharing) and put them into the `pretrained` folder.
 ```
-cd wsss
+cd deeplab
 ```
 2. Modify the configuration file `./configs/voc12_resnet_dplv2.yaml`.
 ```
@@ -100,6 +100,8 @@ python main.py test \
 python main.py crf \
     --config-path configs/voc12_resnet_dplv2.yaml
 ```
+### (optional) Exploratory experiments on weakly supervised object localization (WSOL) tasks.
+  We found that the proposed CRT method is equally suitable for the WSOL task, and only a simple ResNet50 modification of the Deit-S branch can achieve promising results (without the improvement for Deit-S in the WSSS task). Here, we provide a simple implementation for WSOL. You just need to follow the instructions of [TS-CAM](https://github.com/vasgaowei/TS-CAM) and replace the xx file in TS-CAM with the xx file we provide to achieve the results in the paper. 
 ## Performance
 ### Quality
 
