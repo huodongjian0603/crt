@@ -22,7 +22,7 @@ pip install -r requirements.txt
 ```
 python run_sample.py --voc12_root $downloaded_dataset_path/VOCdevkit/VOC2012
 ```
-After the script completes, pseudo labels are generated in the following directory and their quality is evaluated in mIoU. If you want to train DeepLab, add `--infer_list voc12/train_aug.txt` to the above script. The former and the latter respectively generate 1464 and 10582 pseudo-segmentation masks in png format in the `.\result\seg_sem`.
+After the script completes, pseudo labels are generated in the following directory and their quality is evaluated in mIoU. If you want to train DeepLab, add `--infer_list voc12/train_aug.txt` to the above script. The former and the latter respectively generate 1464 and 10582 pseudo-segmentation masks in `.png` format in the `.\result\seg_sem`.
 ```
 .
 ├── misc
