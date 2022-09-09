@@ -66,19 +66,36 @@ VOC2012
 └─pseudo_seg_labels
 ```
 ### Train DeepLab with the generated pseudo labels.
-1. Download the [pretrained models](https://drive.google.com/file/d/1lwbyAo-XTKsmQX5ZtaZv-5DQONbhJh9n/view?usp=sharing) and put them into the `pretrained` folder.
-2. Train DeepLabv2-resnet101 model.
+1. Change the working directory to `wsss/`. Download the [pretrained models](https://drive.google.com/file/d/1lwbyAo-XTKsmQX5ZtaZv-5DQONbhJh9n/view?usp=sharing) and put them into the `pretrained` folder.
+```
+cd wsss
+```
+2. Modify the configuration file `./configs/voc12_resnet_dplv2.yaml`.
+```
+DATASET:
+    NAME: vocaug
+    ROOT: ./../../VOC2012  # Change the directory to where your VOC2012 is located
+    LABELS: ./data/datasets/voc12/labels.txt
+    N_CLASSES: 21
+    IGNORE_LABEL: 255
+    SCALES: [0.5, 0.75, 1.0, 1.25, 1.5]
+    SPLIT:
+        TRAIN: train_aug
+        VAL: val
+        TEST: test
+```
+3. Train DeepLabv2-resnet101 model.
 ```
 python main.py train \
       --config-path configs/voc12_resnet_dplv2.yaml
 ```
-3. Evaluate DeepLabv2-resnet101 model on the validation set.
+4. Evaluate DeepLabv2-resnet101 model on the validation set.
 ```
 python main.py test \
     --config-path configs/voc12_resnet_dplv2.yaml \
     --model-path data/models/voc12/voc12_resnet_v2/train_aug/checkpoint_final.pth
 ```
-4. Re-evaluate with a CRF post-processing.
+5. Re-evaluate with a CRF post-processing.
 ```
 python main.py crf \
     --config-path configs/voc12_resnet_dplv2.yaml
@@ -111,11 +128,9 @@ python main.py crf \
   CUB-200-2011 | 72.9 | 86.4 | 90.1 | [Download](https://drive.google.com/file/d/1KCQC49zyaY2uD9n-CFVS88mUHVM1l5eB/view?usp=sharing)
 ## TODO
 * link of paper
-* picture of crt
-* performance(quality)
 * WSOL tutorial
 * complete test(deeplab + tscam + model weight)
-* code of deeplab, wsol
+* code of wsol
 
 ## Citation
 
