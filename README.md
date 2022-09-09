@@ -66,5 +66,5 @@ Eprint = {arXiv:2203.04708},
 
 Our project references the codes in the following repos.
 
-- [IRNet](https://github.com/jiwoon-ahn/irn), [TSCAM](https://github.com/vasgaowei/TS-CAM) and [L2G](https://github.com/PengtaoJiang/L2G)
+- [IRNet](https://github.com/jiwoon-ahn/irn), [TSCAM](https://github.com/vasgaowei/TS-CAM) and [L2G](https://github.com/PengtaoJiang/L2G).
 
