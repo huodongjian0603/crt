@@ -109,9 +109,9 @@ For those who are lazy(LOL), we also provide a simple tutorial here, but we stil
 ```
 git clone https://github.com/vasgaowei/TS-CAM.git
 ```
-2. Replace the folder with the same name in `TS-CAM/` with the folder in `wsss/backup/`
+2. Replace the folder with the same name in `TS-CAM/` with the folder in `wsol/backup/`
 ```
-wsss
+wsol
 ├─backup
 │  ├─configs
 │  ├─lib  # main diff with TS-CAM: ResNet50_cam
@@ -136,7 +136,7 @@ bash train_val_cub.sh 0,1 deit small 224
 ```
 5. Evaluation.
 ```
-bash val_cub.sh 0,1 deit small 224 ${MODEL_PATH}
+bash val_cub.sh 0 deit small 224 ${MODEL_PATH}
 ```
 ## Performance
 ### Quality
