@@ -166,6 +166,7 @@ bash val_cub.sh 0 deit small 224 ${MODEL_PATH}
   CUB-200-2011 | 72.9 | 86.4 | 90.1 | [Download](https://drive.google.com/file/d/1KCQC49zyaY2uD9n-CFVS88mUHVM1l5eB/view?usp=sharing)
 ## TODO
 * link of paper
+* Papers With Code Ranking
 * complete test(deeplab + tscam + model weight)
 
 ## Citation
@@ -187,5 +188,5 @@ Eprint = {arXiv:2203.04708},
 
 Our project references the codes in the following repos.
 
-- [IRNet](https://github.com/jiwoon-ahn/irn), [TSCAM](https://github.com/vasgaowei/TS-CAM), [L2G](https://github.com/PengtaoJiang/L2G) and [Deeplab](https://github.com/kazuto1011/deeplab-pytorch).
+- [IRNet](https://github.com/jiwoon-ahn/irn), [TS-CAM](https://github.com/vasgaowei/TS-CAM), [L2G](https://github.com/PengtaoJiang/L2G) and [Deeplab](https://github.com/kazuto1011/deeplab-pytorch).
 
