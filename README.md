@@ -101,7 +101,41 @@ python main.py crf \
     --config-path configs/voc12_resnet_dplv2.yaml
 ```
 ### (optional) Exploratory experiments on weakly supervised object localization (WSOL) tasks.
-  We found that the proposed CRT method is equally suitable for the WSOL task, and only a simple ResNet50 modification of the Deit-S branch can achieve promising results (without the improvement for Deit-S in the WSSS task). Here, we provide a simple implementation for WSOL. You just need to follow the instructions of [TS-CAM](https://github.com/vasgaowei/TS-CAM) and replace the xx file in TS-CAM with the xx file we provide to achieve the results in the paper. 
+We found that the proposed CRT method is equally suitable for the WSOL task, and only a simple ResNet50 modification of the Deit-S branch can achieve promising results (without the improvement for Deit-S in the WSSS task). Here, we provide a naive implementation for WSOL task. You just need to follow the instructions of [TS-CAM](https://github.com/vasgaowei/TS-CAM) and replace some files in TS-CAM with the files we provide (see step 2 below) to achieve the results in the paper. 
+For those who are lazy(LOL), we also provide a simple tutorial here, but we still strongly recommend browsing the [TS-CAM](https://github.com/vasgaowei/TS-CAM) repository for details.
+1. Download the repository.
+```
+git clone https://github.com/vasgaowei/TS-CAM.git
+```
+2. Replace the folder with the same name in `TS-CAM/` with the folder in `wsss/backup/`
+```
+wsss
+├─backup
+│  ├─configs
+│  ├─lib  # main diff with TS-CAM: ResNet50_cam
+│  └─tools_cam  # main diff with TS-CAM: train_cam.py
+├─ckpt
+└─log
+```
+3. Configure the dataset path in file `deit_tscam_small_patch16_224.yaml`
+```
+DATA:
+  DATASET: CUB
+  DATADIR: data/CUB_200_2011 # change your path here
+  NUM_CLASSES: 200
+  RESIZE_SIZE : 256
+  CROP_SIZE : 224
+  IMAGE_MEAN : [0.485, 0.456, 0.406]
+  IMAGE_STD : [0.229, 0.224, 0.225]
+```
+4. Training.
+```
+bash train_val_cub.sh 0,1 deit small 224
+```
+5. Evaluation.
+```
+bash val_cub.sh 0,1 deit small 224 ${MODEL_PATH}
+```
 ## Performance
 ### Quality
 
@@ -130,9 +164,7 @@ python main.py crf \
   CUB-200-2011 | 72.9 | 86.4 | 90.1 | [Download](https://drive.google.com/file/d/1KCQC49zyaY2uD9n-CFVS88mUHVM1l5eB/view?usp=sharing)
 ## TODO
 * link of paper
-* WSOL tutorial
 * complete test(deeplab + tscam + model weight)
-* code of wsol
 
 ## Citation
 
