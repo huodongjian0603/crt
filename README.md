@@ -102,6 +102,8 @@ python main.py crf \
 ```
 ### (optional) Exploratory experiments on weakly supervised object localization (WSOL) tasks.
 We found that the proposed CRT method is equally suitable for the WSOL task, and only a simple ResNet50 modification of the Deit-S branch can achieve promising results (without the improvement for Deit-S in the WSSS task). Here, we provide a naive implementation for WSOL task. You just need to follow the instructions of [TS-CAM](https://github.com/vasgaowei/TS-CAM) and replace some files in TS-CAM with the files we provide (see step 2 below) to achieve the results in the paper. 
+<br>
+<br>
 For those who are lazy(LOL), we also provide a simple tutorial here, but we still strongly recommend browsing the [TS-CAM](https://github.com/vasgaowei/TS-CAM) repository for details.
 1. Download the repository.
 ```
