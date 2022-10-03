@@ -1,5 +1,5 @@
 # CRT
-Official PyTorch implementation for our paper "Dual Progressive Transformations for Weakly Supervised Semantic Segmentation"
+Official PyTorch implementation for our paper "Dual Progressive Transformations for Weakly Supervised Semantic Segmentation" [[paper]](https://arxiv.org/abs/2209.15211)
 
 <div align="center">
   <img src="fig\outline.png" width="800px">
@@ -165,22 +165,24 @@ bash val_cub.sh 0 deit small 224 ${MODEL_PATH}
  ----- | ----- | ----- | ----- | -----
   CUB-200-2011 | 72.9 | 86.4 | 90.1 | [Download](https://drive.google.com/file/d/1KCQC49zyaY2uD9n-CFVS88mUHVM1l5eB/view?usp=sharing)
 ## TODO
-* link of paper
-* Papers With Code Ranking
-* complete test(deeplab + tscam + model weight)
+* complete test
 
 ## Citation
 
 If you find the code useful, please consider citing our paper using the following BibTeX entry.
 
 ```latex
-@misc{2203.04708,
-Author = {xxx},
-Title = {xxx},
-Year = {2022},
-Eprint = {arXiv:2203.04708},
+@misc{
+  https://doi.org/10.48550/arxiv.2209.15211,
+  doi = {10.48550/ARXIV.2209.15211},
+  url = {https://arxiv.org/abs/2209.15211},
+  author = {Huo, Dongjian and Su, Yukun and Wu, Qingyao},
+  keywords = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  title = {Dual Progressive Transformations for Weakly Supervised Semantic Segmentation},
+  publisher = {arXiv},
+  year = {2022},
+  copyright = {arXiv.org perpetual, non-exclusive license}
 }
-
 ```
 
 
